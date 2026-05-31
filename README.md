@@ -1,9 +1,9 @@
-# Career-Ops
+# AutoRechercheAlternance
 
-[English](README.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [한국어](README.ko-KR.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [简体中文](README.cn.md) | [繁體中文](README.zh-TW.md)
+[English](README.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [한국어](README.ko-KR.md) | [日本語](README.ja.md) | [Українська](README.ua.md) | [Русский](README.ru.md) | [繁體中文](README.zh-TW.md)
 
 <p align="center">
-  <a href="https://x.com/santifer"><img src="docs/hero-banner.jpg" alt="Career-Ops — Multi-Agent Job Search System" width="800"></a>
+  <a href="https://x.com/santifer"><img src="docs/hero-banner.jpg" alt="AutoRechercheAlternance — Multi-Agent Job Search System" width="800"></a>
 </p>
 
 <p align="center">
@@ -38,7 +38,7 @@
 ---
 
 <p align="center">
-  <img src="docs/demo.gif" alt="Career-Ops Demo" width="800">
+  <img src="docs/demo.gif" alt="AutoRechercheAlternance Demo" width="800">
 </p>
 
 <p align="center"><strong>740+ job listings evaluated · 100+ personalized CVs · 1 dream role landed</strong></p>
@@ -47,7 +47,7 @@
 
 ## What Is This
 
-Career-Ops turns any AI coding CLI into a full job search command center. Instead of manually tracking applications in a spreadsheet, you get an AI-powered pipeline that:
+AutoRechercheAlternance ([AutoRechercheAlternance.org](https://AutoRechercheAlternance.org), also known as **careerops**) turns any AI coding CLI into a full job search command center. Instead of manually tracking applications in a spreadsheet, you get an AI-powered pipeline that:
 
 - **Evaluates offers** with a structured A-F scoring system (10 weighted dimensions)
 - **Generates tailored PDFs** -- ATS-optimized CVs customized per job description
@@ -55,35 +55,35 @@ Career-Ops turns any AI coding CLI into a full job search command center. Instea
 - **Processes in batch** -- evaluate 10+ offers in parallel with sub-agents
 - **Tracks everything** in a single source of truth with integrity checks
 
-> **Important: This is NOT a spray-and-pray tool.** Career-ops is a filter -- it helps you find the few offers worth your time out of hundreds. The system strongly recommends against applying to anything scoring below 4.0/5. Your time is valuable, and so is the recruiter's. Always review before submitting.
+> **Important: This is NOT a spray-and-pray tool.** AutoRechercheAlternance is a filter -- it helps you find the few offers worth your time out of hundreds. The system strongly recommends against applying to anything scoring below 4.0/5. Your time is valuable, and so is the recruiter's. Always review before submitting.
 
-Career-ops is agentic: Claude Code navigates career pages with Playwright, evaluates fit by reasoning about your CV vs the job description (not keyword matching), and adapts your resume per listing.
+AutoRechercheAlternance is agentic: Claude Code navigates career pages with Playwright, evaluates fit by reasoning about your CV vs the job description (not keyword matching), and adapts your resume per listing.
 
 > **Heads up: the first evaluations won't be great.** The system doesn't know you yet. Feed it context -- your CV, your career story, your proof points, your preferences, what you're good at, what you want to avoid. The more you nurture it, the better it gets. Think of it as onboarding a new recruiter: the first week they need to learn about you, then they become invaluable.
 
-Built by someone who used it to evaluate 740+ job offers, generate 100+ tailored CVs, and land a Head of Applied AI role. [Read the full case study](https://santifer.io/career-ops-system).
+Built by someone who used it to evaluate 740+ job offers, generate 100+ tailored CVs, and land a Head of Applied AI role. [Read the full case study](https://santifer.io/AutoRechercheAlternance-system).
 
 ## Features
 
-| Feature | Description |
-|---------|-------------|
-| **Auto-Pipeline** | Paste a URL, get a full evaluation + PDF + tracker entry |
-| **6-Block Evaluation** | Role summary, CV match, level strategy, comp research, personalization, interview prep (STAR+R) |
-| **Interview Story Bank** | Accumulates STAR+Reflection stories across evaluations -- 5-10 master stories that answer any behavioral question |
-| **Negotiation Scripts** | Salary negotiation frameworks, geographic discount pushback, competing offer leverage |
-| **ATS PDF Generation** | Keyword-injected CVs with Space Grotesk + DM Sans design |
-| **Portal Scanner** | 45+ companies pre-configured (Anthropic, OpenAI, ElevenLabs, Retool, n8n...) + custom queries across Ashby, Greenhouse, Lever, Wellfound |
-| **Batch Processing** | Parallel evaluation with `claude -p` workers |
-| **Dashboard TUI** | Terminal UI to browse, filter, and sort your pipeline |
-| **Human-in-the-Loop** | AI evaluates and recommends, you decide and act. The system never submits an application -- you always have the final call |
-| **Pipeline Integrity** | Automated merge, dedup, status normalization, health checks |
+| Feature                  | Description                                                                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Auto-Pipeline**        | Paste a URL, get a full evaluation + PDF + tracker entry                                                                                 |
+| **6-Block Evaluation**   | Role summary, CV match, level strategy, comp research, personalization, interview prep (STAR+R)                                          |
+| **Interview Story Bank** | Accumulates STAR+Reflection stories across evaluations -- 5-10 master stories that answer any behavioral question                        |
+| **Negotiation Scripts**  | Salary negotiation frameworks, geographic discount pushback, competing offer leverage                                                    |
+| **ATS PDF Generation**   | Keyword-injected CVs with Space Grotesk + DM Sans design                                                                                 |
+| **Portal Scanner**       | 45+ companies pre-configured (Anthropic, OpenAI, ElevenLabs, Retool, n8n...) + custom queries across Ashby, Greenhouse, Lever, Wellfound |
+| **Batch Processing**     | Parallel evaluation with `claude -p` workers                                                                                             |
+| **Dashboard TUI**        | Terminal UI to browse, filter, and sort your pipeline                                                                                    |
+| **Human-in-the-Loop**    | AI evaluates and recommends, you decide and act. The system never submits an application -- you always have the final call               |
+| **Pipeline Integrity**   | Automated merge, dedup, status normalization, health checks                                                                              |
 
 ## Quick Start
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/santifer/career-ops.git
-cd career-ops && npm install
+git clone https://github.com/santifer/AutoRechercheAlternance.git
+cd AutoRechercheAlternance && npm install
 npx playwright install chromium   # Required for PDF generation
 
 # 2. Check setup
@@ -106,7 +106,7 @@ claude   # Open Claude Code in this directory
 # "Update my profile with this CV I'm pasting"
 
 # 6. Start using
-# Paste a job URL or run /career-ops
+# Paste a job URL or run /AutoRechercheAlternance
 ```
 
 > **The system is designed to be customized by Claude itself.** Modes, archetypes, scoring weights, negotiation scripts -- just ask Claude to change them. It reads the same files it uses, so it knows exactly what to edit.
@@ -115,7 +115,7 @@ See [docs/SETUP.md](docs/SETUP.md) for the full setup guide.
 
 ## Gemini CLI Integration
 
-Career-ops supports [Gemini CLI](https://github.com/google-gemini/gemini-cli) natively — the same way it supports Claude Code and OpenCode. All 15 slash commands are available, using the same `modes/*.md` evaluation logic.
+AutoRechercheAlternance supports [Gemini CLI](https://github.com/google-gemini/gemini-cli) natively — the same way it supports Claude Code and OpenCode. All 15 slash commands are available, using the same `modes/*.md` evaluation logic.
 
 ### Option A — Native Gemini CLI (Recommended)
 
@@ -127,16 +127,16 @@ npm install -g @google/gemini-cli
 # 2. Authenticate (free — uses your Google account)
 gemini auth
 
-# 3. Run in the career-ops directory
-cd career-ops
+# 3. Run in the AutoRechercheAlternance directory
+cd AutoRechercheAlternance
 gemini
 
 # 4. Use slash commands just like Claude Code
-/career-ops "Senior AI Engineer at Anthropic..."
-/career-ops-evaluate --file ./jds/openai.txt
-/career-ops-scan
-/career-ops-pdf
-/career-ops-tracker
+/AutoRechercheAlternance "Senior AI Engineer at Anthropic..."
+/AutoRechercheAlternance-evaluate --file ./jds/openai.txt
+/AutoRechercheAlternance-scan
+/AutoRechercheAlternance-pdf
+/AutoRechercheAlternance-tracker
 ```
 
 The `GEMINI.md` file is auto-loaded as context. All 15 commands are defined in `.gemini/commands/*.toml`.
@@ -146,7 +146,7 @@ The `GEMINI.md` file is auto-loaded as context. All 15 commands are defined in `
 ```bash
 # 1. Get a free API key at https://aistudio.google.com/apikey
 cp .env.example .env
-# Edit .env → set GEMINI_API_KEY=your_key_here
+# Edit .env â†’ set GEMINI_API_KEY=your_key_here
 
 # 2. Install dependencies
 npm install
@@ -161,43 +161,43 @@ npm run gemini:eval -- "JD text here"
 
 ## Usage
 
-Career-ops is a single slash command with multiple modes:
+AutoRechercheAlternance is a single slash command with multiple modes:
 
 ```
-/career-ops                → Show all available commands
-/career-ops {paste a JD}   → Full auto-pipeline (evaluate + PDF + tracker)
-/career-ops scan           → Scan portals for new offers
-/career-ops pdf            → Generate ATS-optimized CV
-/career-ops batch          → Batch evaluate multiple offers
-/career-ops tracker        → View application status
-/career-ops apply          → Fill application forms with AI
-/career-ops pipeline       → Process pending URLs
-/career-ops contacto       → LinkedIn outreach message
-/career-ops deep           → Deep company research
-/career-ops training       → Evaluate a course/cert
-/career-ops project        → Evaluate a portfolio project
+/AutoRechercheAlternance                â†’ Show all available commands
+/AutoRechercheAlternance {paste a JD}   â†’ Full auto-pipeline (evaluate + PDF + tracker)
+/AutoRechercheAlternance scan           â†’ Scan portals for new offers
+/AutoRechercheAlternance pdf            â†’ Generate ATS-optimized CV
+/AutoRechercheAlternance batch          â†’ Batch evaluate multiple offers
+/AutoRechercheAlternance tracker        â†’ View application status
+/AutoRechercheAlternance apply          â†’ Fill application forms with AI
+/AutoRechercheAlternance pipeline       â†’ Process pending URLs
+/AutoRechercheAlternance contacto       â†’ LinkedIn outreach message
+/AutoRechercheAlternance deep           â†’ Deep company research
+/AutoRechercheAlternance training       â†’ Evaluate a course/cert
+/AutoRechercheAlternance project        â†’ Evaluate a portfolio project
 ```
 
-Or just paste a job URL or description directly -- career-ops auto-detects it and runs the full pipeline.
+Or just paste a job URL or description directly -- AutoRechercheAlternance auto-detects it and runs the full pipeline.
 
 ## How It Works
 
 ```
 You paste a job URL or description
-        │
-        ▼
-┌──────────────────┐
-│  Archetype       │  Classifies: LLMOps / Agentic / PM / SA / FDE / Transformation
-│  Detection       │
-└────────┬─────────┘
-         │
-┌────────▼─────────┐
-│  A-F Evaluation  │  Match, gaps, comp research, STAR stories
-│  (reads cv.md)   │
-└────────┬─────────┘
-         │
-    ┌────┼────┐
-    ▼    ▼    ▼
+        â”‚
+        â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  Archetype       â”‚  Classifies: LLMOps / Agentic / PM / SA / FDE / Transformation
+â”‚  Detection       â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+         â”‚
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  A-F Evaluation  â”‚  Match, gaps, comp research, STAR stories
+â”‚  (reads cv.md)   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+         â”‚
+    â”Œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”
+    â–¼    â–¼    â–¼
  Report  PDF  Tracker
   .md   .pdf   .tsv
 ```
@@ -240,34 +240,34 @@ Features: 6 filter tabs, 4 sort modes, grouped/flat view, lazy-loaded previews, 
 ## Project Structure
 
 ```
-career-ops/
-├── AGENTS.md                    # Canonical agent instructions (all CLIs)
-├── CLAUDE.md                    # Claude Code wrapper (imports AGENTS.md)
-├── cv.md                        # Your CV (create this)
-├── article-digest.md            # Your proof points (optional)
-├── config/
-│   └── profile.example.yml      # Template for your profile
-├── modes/                       # 14 skill modes
-│   ├── _shared.md               # Shared context (customize this)
-│   ├── oferta.md                # Single evaluation
-│   ├── pdf.md                   # PDF generation
-│   ├── scan.md                  # Portal scanner
-│   ├── batch.md                 # Batch processing
-│   └── ...
-├── templates/
-│   ├── cv-template.html         # ATS-optimized CV template
-│   ├── portals.example.yml      # Scanner config template
-│   └── states.yml               # Canonical statuses
-├── batch/
-│   ├── batch-prompt.md          # Self-contained worker prompt
-│   └── batch-runner.sh          # Orchestrator script
-├── dashboard/                   # Go TUI pipeline viewer
-├── data/                        # Your tracking data (gitignored)
-├── reports/                     # Evaluation reports (gitignored)
-├── output/                      # Generated PDFs (gitignored)
-├── fonts/                       # Space Grotesk + DM Sans
-├── docs/                        # Setup, customization, architecture
-└── examples/                    # Sample CV, report, proof points
+AutoRechercheAlternance/
+â”œâ”€â”€ AGENTS.md                    # Canonical agent instructions (all CLIs)
+â”œâ”€â”€ CLAUDE.md                    # Claude Code wrapper (imports AGENTS.md)
+â”œâ”€â”€ cv.md                        # Your CV (create this)
+â”œâ”€â”€ article-digest.md            # Your proof points (optional)
+â”œâ”€â”€ config/
+â”‚   â””â”€â”€ profile.example.yml      # Template for your profile
+â”œâ”€â”€ modes/                       # 14 skill modes
+â”‚   â”œâ”€â”€ _shared.md               # Shared context (customize this)
+â”‚   â”œâ”€â”€ oferta.md                # Single evaluation
+â”‚   â”œâ”€â”€ pdf.md                   # PDF generation
+â”‚   â”œâ”€â”€ scan.md                  # Portal scanner
+â”‚   â”œâ”€â”€ batch.md                 # Batch processing
+â”‚   â””â”€â”€ ...
+â”œâ”€â”€ templates/
+â”‚   â”œâ”€â”€ cv-template.html         # ATS-optimized CV template
+â”‚   â”œâ”€â”€ portals.example.yml      # Scanner config template
+â”‚   â””â”€â”€ states.yml               # Canonical statuses
+â”œâ”€â”€ batch/
+â”‚   â”œâ”€â”€ batch-prompt.md          # Self-contained worker prompt
+â”‚   â””â”€â”€ batch-runner.sh          # Orchestrator script
+â”œâ”€â”€ dashboard/                   # Go TUI pipeline viewer
+â”œâ”€â”€ data/                        # Your tracking data (gitignored)
+â”œâ”€â”€ reports/                     # Evaluation reports (gitignored)
+â”œâ”€â”€ output/                      # Generated PDFs (gitignored)
+â”œâ”€â”€ fonts/                       # Space Grotesk + DM Sans
+â”œâ”€â”€ docs/                        # Setup, customization, architecture
+â””â”€â”€ examples/                    # Sample CV, report, proof points
 ```
 
 ## Tech Stack
@@ -290,23 +290,23 @@ career-ops/
 
 ## About the Author
 
-I'm Santiago -- Head of Applied AI, former founder (built and sold a business that still runs with my name on it). I built career-ops to manage my own job search. It worked: I used it to land my current role.
+I'm Santiago -- Head of Applied AI, former founder (built and sold a business that still runs with my name on it). I built AutoRechercheAlternance to manage my own job search. It worked: I used it to land my current role.
 
-My portfolio and other open source projects → [santifer.io](https://santifer.io)
+My portfolio and other open source projects â†’ [santifer.io](https://santifer.io)
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=santifer%2Fcareer-ops&type=timeline&legend=top-left">
+<a href="https://www.star-history.com/?repos=santifer%2FAutoRechercheAlternance&type=timeline&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=santifer/career-ops&type=timeline&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=santifer/career-ops&type=timeline&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=santifer/career-ops&type=timeline&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=santifer/AutoRechercheAlternance&type=timeline&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=santifer/AutoRechercheAlternance&type=timeline&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=santifer/AutoRechercheAlternance&type=timeline&legend=top-left" />
  </picture>
 </a>
 
 ## Disclaimer
 
-**career-ops is a local, open-source tool — NOT a hosted service.** By using this software, you acknowledge:
+**AutoRechercheAlternance is a local, open-source tool — NOT a hosted service.** By using this software, you acknowledge:
 
 1. **You control your data.** Your CV, contact info, and personal data stay on your machine and are sent directly to the AI provider you choose (Anthropic, OpenAI, etc.). We do not collect, store, or have access to any of your data.
 2. **You control the AI.** The default prompts instruct the AI not to auto-submit applications, but AI models can behave unpredictably. If you modify the prompts or use different models, you do so at your own risk. **Always review AI-generated content for accuracy before submitting.**
@@ -317,15 +317,15 @@ See [LEGAL_DISCLAIMER.md](LEGAL_DISCLAIMER.md) for full details. This software i
 
 ## Contributors
 
-<a href="https://github.com/santifer/career-ops/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=santifer/career-ops" />
+<a href="https://github.com/santifer/AutoRechercheAlternance/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=santifer/AutoRechercheAlternance" />
 </a>
 
-Got hired using career-ops? [Share your story!](https://github.com/santifer/career-ops/issues/new?template=i-got-hired.yml)
+Got hired using AutoRechercheAlternance? [Share your story!](https://github.com/santifer/AutoRechercheAlternance/issues/new?template=i-got-hired.yml)
 
 ## License & Trademark
 
-The code is licensed under [MIT](LICENSE). The "career-ops" name and
+The code is licensed under [MIT](LICENSE). The "AutoRechercheAlternance" name and
 brand are governed by the [Trademark Policy](TRADEMARK.md) — permissive
 for community use, reserved for commercial product naming and
 endorsement.
@@ -337,3 +337,4 @@ endorsement.
 [![X](https://img.shields.io/badge/X-000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/santifer)
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/8pRpHETxa4)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hi@santifer.io)
+

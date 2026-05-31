@@ -1,7 +1,7 @@
 {
-  "name": "career-ops",
-  "version": "1.8.0",
-  "description": "AI-powered job search pipeline built on Claude Code",
+  "name": "AutoRechercheAlternance",
+  "version": "1.8.1",
+  "description": "Système de recherche d'alternance automatisé par IA",
   "scripts": {
     "doctor": "node doctor.mjs",
     "verify": "node verify-pipeline.mjs",
@@ -15,13 +15,15 @@
     "rollback": "node update-system.mjs rollback",
     "liveness": "node check-liveness.mjs",
     "scan": "node scan.mjs",
+    "patterns": "node analyze-patterns.mjs",
     "gemini:eval": "node gemini-eval.mjs"
   },
   "keywords": [
     "ai",
     "job-search",
-    "claude-code",
+    "alternance",
     "career",
+    "AutoRechercheAlternance",
     "automation"
   ],
   "author": "Santiago Fernández de Valderrama <hi@santifer.io> (https://santifer.io)",
