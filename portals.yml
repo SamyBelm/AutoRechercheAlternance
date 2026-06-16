@@ -1,0 +1,441 @@
+# AutoRechercheAlternance Portal Scanner Configuration
+# CONFIGURATION INDUSTRIELLE : Sami Belmihoub — Alternance Administrateur Systèmes et Réseaux Bac+3 (Paris)
+
+# -- Location filter --
+# Focalisation sur Paris et Île-de-France
+location_filter:
+  allow:
+    - "Paris"
+    - "Île-de-France"
+    - "75"
+    - "92"
+    - "93"
+    - "94"
+    - "Remote"
+    - "Télétravail"
+  block:
+    - "United States"
+    - "USA"
+    - "India"
+    - "United Kingdom"
+    - "Germany"
+
+# -- Title filter --
+# Focus sur Administrateur Systèmes et Réseaux niveau Bac+3
+title_filter:
+  positive:
+    # -- Cœur du profil : Systèmes & Réseaux --
+    - "Administrateur Systèmes et Réseaux"
+    - "Administrateur Systèmes & Réseaux"
+    - "Administrateur Systèmes"
+    - "Administrateur Réseaux"
+    - "Admin Sys"
+    - "Admin Réseaux"
+    - "Technicien Systèmes"
+    - "Technicien Réseaux"
+    - "Technicien Informatique"
+    - "Infrastructure"
+    - "Cloud"
+    - "Exploitation"
+    # -- Termes contractuels et Niveau --
+    - "Alternance"
+    - "Apprentissage"
+    - "Apprenti"
+    - "Bac+3"
+    - "Bachelor"
+    - "L3"
+    - "CSI"
+    - "Développeur"
+    - "Developer"
+    - "Fullstack"
+    - "IL"
+  negative:
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Director"
+    - "Architect"
+    - "Manager"
+    - "Directeur"
+    - "Stage"
+    - "Intern"
+    - "Marketing"
+    - "Sales"
+    - "RH"
+    - "Recrutement"
+
+# -- Search queries --
+# Interrogation ciblée avec les mots-clés : Alternance, Bac+3, Paris, Administrateur Systèmes et Réseaux
+search_queries:
+  # -- LINKEDIN FRANCE --
+  - name: LinkedIn — Alternance Admin Systèmes & Réseaux Paris Bac+3
+    query: 'site:linkedin.com/jobs "Alternance" "Administrateur Systèmes et Réseaux" Paris "Bac+3"'
+    enabled: true
+  - name: LinkedIn — Alternance Infrastructure IT Paris
+    query: 'site:linkedin.com/jobs "Alternance" "Systèmes" "Réseaux" Paris'
+    enabled: true
+  - name: LinkedIn — Alternance Support / Admin Junior
+    query: 'site:linkedin.com/jobs "Alternance" "Technicien Systèmes" OR "Support IT" Paris'
+    enabled: true
+
+  # -- FRANCE TRAVAIL --
+  - name: France Travail — Alternance Réseaux & Systèmes 75
+    query: 'site:francetravail.fr/offres "Alternance" "Administrateur Systèmes" Paris'
+    enabled: true
+
+  # -- HELLOWORK, INDEED, METEOJOB --
+  - name: HelloWork — Alternance Admin Systèmes Paris
+    query: 'site:hellowork.com "Alternance" "Administrateur Systèmes et Réseaux" Paris'
+    enabled: true
+  - name: Indeed — Alternance Bac+3 Systèmes Réseaux
+    query: 'site:indeed.com "Alternance" "Bac+3" "Systèmes et Réseaux" Paris'
+    enabled: true
+  - name: Meteojob — Alternance Systèmes Réseaux Paris
+    query: 'site:meteojob.com "Alternance" "Administrateur Systèmes" Paris'
+    enabled: true
+
+  # -- JEUNES ET ÉTUDIANTS --
+  - name: JobTeaser — Alternance Systèmes Réseaux Paris
+    query: 'site:jobteaser.com "Alternance" "Systèmes" "Paris"'
+    enabled: true
+
+  # -- WELCOME TO THE JUNGLE --
+  - name: Welcome to the Jungle — Alternance Admin Sys/Réseaux
+    query: 'site:welcometothejungle.com "Alternance" "Administrateur Systèmes" Paris'
+    enabled: true
+
+  # -- ATS GLOBALS (Greenhouse, Ashby, Lever) --
+  - name: Greenhouse France — Alternance IT
+    query: 'site:boards.greenhouse.io OR site:job-boards.greenhouse.io "Alternance" "Systems" Paris'
+    enabled: true
+
+  # -- LINKEDIN AVANCÉ (Dernières 24h) --
+  - name: LinkedIn — Alternance SysAdmin (Dernières 24h)
+    query: 'site:linkedin.com/jobs "alternance" "systèmes" "réseaux" Paris when:1d'
+    enabled: true
+
+
+# -- Tracked companies --
+# Liste exhaustive des plus grands consommateurs de profils IT en France (ESN, Banques, Télécoms, Industrie, Luxe, Santé)
+tracked_companies:
+
+  # -- Les Géants des Services Numériques (ESN / Infogérance) --
+  - name: Capgemini
+    careers_url: https://www.capgemini.com/fr-fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:capgemini.com/fr-fr/carrieres "Alternance" "Systèmes" OR "Réseaux" Paris'
+    notes: "N°1 des ESN en France. Volume de recrutement d'alternants massif sur l'infrastructure."
+    enabled: true
+
+  - name: SCC France
+    careers_url: https://france.scc.com/carriere/
+    scan_method: websearch
+    scan_query: 'site:france.scc.com "Alternance" "Technicien" OR "Systèmes"'
+    notes: "N°2 des ESN. Leader historique du déploiement de postes de travail et de l'infogérance de parcs."
+    enabled: true
+
+  - name: Sopra Steria
+    careers_url: https://www.soprasteria.fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:soprasteria.fr/carrieres "Alternance" "Systèmes" OR "Réseaux" Paris'
+    notes: "Acteur majeur de l'infogérance, de la cybersécurité et de l'exploitation réseau."
+    enabled: true
+
+  - name: Inetum
+    careers_url: https://www.inetum.com/fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:inetum.com "Alternance" "Informatique" OR "Support"'
+    notes: "ESN très active sur le support de proximité et l'administration système junior."
+    enabled: true
+
+  - name: CGI France
+    careers_url: https://www.cgi.com/france/fr-fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:cgi.com "Alternance" "Systèmes" OR "Réseaux" Paris'
+    notes: "Très forte présence en Île-de-France, spécialisée en maintenance et réseaux."
+    enabled: true
+
+  - name: Alten
+    careers_url: https://www.alten.fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:alten.fr/carrieres "Alternance" "Systèmes" OR "Réseaux"'
+    notes: "Grand groupe d'ingénierie. Excellent pour monter en compétences sur les infrastructures."
+    enabled: true
+
+  - name: Econocom
+    careers_url: https://www.econocom.com/fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:econocom.com "Alternance" "Support" OR "Technicien"'
+    notes: "Spécialiste de la gestion de parc informatique et du déploiement matériel à grande échelle."
+    enabled: true
+
+  - name: Computacenter
+    careers_url: https://www.computacenter.com/fr-fr/careers
+    scan_method: websearch
+    scan_query: 'site:computacenter.com "Alternance" "Technicien" OR "Réseau"'
+    notes: "Géant des services d'infrastructures informatiques et du helpdesk d'entreprise."
+    enabled: true
+
+  - name: Helpline
+    careers_url: https://www.helpline.fr/carrieres/
+    scan_method: websearch
+    scan_query: 'site:helpline.fr "Alternance" OR "Apprenti"'
+    notes: "Le spécialiste européen du helpdesk et du support utilisateur IT. Très formateur."
+    enabled: true
+
+  - name: Axians (Groupe VINCI)
+    careers_url: https://www.axians.fr/fr/carrieres/
+    scan_method: websearch
+    scan_query: 'site:axians.fr "Alternance" "Réseaux" OR "Systèmes"'
+    notes: "La marque d'infrastructures ICT de VINCI. Énormément de réseaux, télécoms et cybersécurité."
+    enabled: true
+
+  # -- Secteur Santé & Distribution Pharmaceutique (Valorisation de ton XP Alliance Healthcare) --
+  - name: Celesio / McKesson France
+    careers_url: https://www.mckesson.eu/careers
+    scan_method: websearch
+    scan_query: '"McKesson" OR "Celesio" "Alternance" informatique France'
+    notes: "Acteur majeur de la logistique de santé, environnements similaires à ton stage de technicien."
+    enabled: true
+
+  - name: Sanofi
+    careers_url: https://www.sanofi.fr/fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:sanofi.fr "Alternance" "Informatique" OR "Support" OR "Réseau"'
+    notes: "Géant de la pharma avec des DSI immenses en Île-de-France et une sécurité très stricte."
+    enabled: true
+
+  # -- Opérateurs Télécoms & Infrastructures Cloud Françaises --
+  - name: Orange Business
+    careers_url: https://orange.jobs
+    scan_method: websearch
+    scan_query: 'site:orange.jobs "Alternance" "Réseaux" OR "Systèmes" Paris'
+    notes: "Incontournable pour ton niveau Cisco CCNA2. Gestion de réseaux critiques."
+    enabled: true
+
+  - name: Scaleway
+    careers_url: https://jobs.lever.co/scaleway
+    notes: "Fournisseur de Cloud français (Groupe Iliad). Écosystème parfait pour du Linux et de la virtualisation."
+    enabled: true
+
+  - name: OVHcloud
+    careers_url: https://careers.ovhcloud.com
+    scan_method: websearch
+    scan_query: 'site:careers.ovhcloud.com "Alternance"'
+    notes: "Leader européen du cloud. Recrutement massif sur les technologies serveurs et de stockage."
+    enabled: true
+
+  - name: Bouygues Telecom
+    careers_url: https://www.recrute.bouyguestelecom.fr
+    scan_method: websearch
+    scan_query: 'site:recrute.bouyguestelecom.fr "Alternance" "Informatique"'
+    notes: "Très orienté support réseau de proximité et déploiement d'équipements."
+    enabled: true
+
+  - name: Iliad (Free)
+    careers_url: https://recrutement.iliad.fr
+    scan_method: websearch
+    scan_query: 'site:recrutement.iliad.fr "Alternance" "Technicien"'
+    notes: "Gestion d'infrastructures réseaux dynamiques et support informatique."
+    enabled: true
+
+  # -- Secteur Bancaire & Assurances (DSI de masse) --
+  - name: BPCE Infogérance & Technologies (BPCE-IT)
+    careers_url: https://www.bpce-it.fr
+    scan_method: websearch
+    scan_query: '"BPCE Infogérance" "Alternance" "Systèmes" OR "Réseaux"'
+    notes: "DSI géante gérant l'informatique des Banques Populaires et Caisses d'Épargne."
+    enabled: true
+
+  - name: Crédit Agricole Technologies et Services
+    careers_url: https://www.ca-ts.fr/carrieres/
+    scan_method: websearch
+    scan_query: 'site:ca-ts.fr "Alternance" "Systèmes" OR "Réseaux"'
+    notes: "Gère les infrastructures informatiques du réseau Crédit Agricole."
+    enabled: true
+
+  - name: Société Générale
+    careers_url: https://careers.societegenerale.com
+    scan_method: websearch
+    scan_query: 'site:careers.societegenerale.com "Alternance" "Systèmes" OR "Réseaux" Paris'
+    notes: "DSI bancaire de premier plan. Très axée sur l'exploitation réseau et la cybersécurité."
+    enabled: true
+
+  - name: AXA France
+    careers_url: https://recrutement.axa.fr
+    scan_method: websearch
+    scan_query: 'site:recrutement.axa.fr "Alternance" "Technicien" OR "Réseau" OR "Système"'
+    notes: "Gros pôle d'infrastructure et support de parc informatique interne en Île-de-France."
+    enabled: true
+
+  # -- Transport, Logistique & Industrie --
+  - name: SNCF (SNCF Mix / e-SNCF)
+    careers_url: https://www.emploi.sncf.com
+    scan_method: websearch
+    scan_query: 'site:emploi.sncf.com "Alternance" "Systèmes et Réseaux" OR "Télécoms" Paris'
+    notes: "La DSI ferroviaire gère un des réseaux IT les plus denses de France. Idéal pour le réseau/télécom."
+    enabled: true
+
+  - name: RATP
+    careers_url: https://www.ratp.fr/rejoignez-nous
+    scan_method: websearch
+    scan_query: 'site:ratp.fr "Alternance" "Télécoms" OR "Informatique" OR "Systèmes"'
+    notes: "Besoins massifs en maintenance, supervision réseau et exploitation système."
+    enabled: true
+
+  - name: Air France
+    careers_url: https://recrutement.airfrance.com
+    scan_method: websearch
+    scan_query: 'site:recrutement.airfrance.com "Alternance" "Informatique" OR "Réseau"'
+    notes: "Maintenance de parc aéronautique IT, serveurs et support de proximité à Roissy/Orly."
+    enabled: true
+
+  - name: Renault Group
+    careers_url: https://renault.com/carrieres
+    scan_method: websearch
+    scan_query: 'site:renault.com "Alternance" "Systèmes" OR "Réseaux" France'
+    notes: "DSI industrielle moderne, infrastructures hybrides, réseaux d'usines et support."
+    enabled: true
+
+  - name: EDF
+    careers_url: https://www.edf.fr/edf-recrute
+    scan_method: websearch
+    scan_query: 'site:edf.fr/edf-recrute "Alternance" "Informatique" OR "Réseaux" Île-de-France'
+    notes: "Infrastructures critiques. Énorme opportunité pour faire valoir tes connaissances en sécurité (pfSense, Wazuh)[cite: 38, 41]."
+    enabled: true
+
+  # -- Écosystème Scale-ups & Licornes Françaises (Modern Stack IT) --
+  - name: Qonto
+    careers_url: https://jobs.lever.co/qonto
+    notes: "Paris. Support, gestion de parc Mac/Windows, outils de ticketing modernes."
+    enabled: true
+
+  - name: Ledger
+    careers_url: https://job-boards.greenhouse.io/ledger
+    api: https://boards-api.greenhouse.io/v1/boards/ledger/jobs
+    notes: "Idéal pour lier réseau et cybersécurité (Wazuh, pfSense)[cite: 38, 41]."
+    enabled: true
+
+  - name: Doctolib
+    careers_url: https://about.doctolib.fr/careers/
+    api: https://boards-api.eu.greenhouse.io/v1/boards/doctolib/jobs
+    notes: "Paris. Très gros volume de recrutement sur l'administration de parc et le helpdesk interne."
+    enabled: true
+
+  - name: BlaBlaCar
+    careers_url: https://job-boards.greenhouse.io/blablacar
+    api: https://boards-api.eu.greenhouse.io/v1/boards/blablacar/jobs
+    notes: "Paris. Support IT et infrastructure."
+    enabled: true
+
+  - name: Alan
+    careers_url: https://job-boards.greenhouse.io/alan
+    api: https://boards-api.eu.greenhouse.io/v1/boards/alan/jobs
+    notes: "Paris. Assurance santé tech, souvent des besoins en IT Support."
+    enabled: true
+
+  - name: PayFit
+    careers_url: https://job-boards.greenhouse.io/payfit
+    api: https://boards-api.eu.greenhouse.io/v1/boards/payfit/jobs
+    notes: "Paris. RH Tech, support interne et parc informatique."
+    enabled: true
+
+  - name: ManoMano
+    careers_url: https://job-boards.greenhouse.io/manomano
+    api: https://boards-api.eu.greenhouse.io/v1/boards/manomano/jobs
+    notes: "Paris. E-commerce, gros pôle infrastructure."
+    enabled: true
+
+  - name: Dataiku
+    careers_url: https://job-boards.greenhouse.io/dataiku
+    api: https://boards-api.greenhouse.io/v1/boards/dataiku/jobs
+    notes: "Paris. Licorne IA, besoins en IT Operations."
+    enabled: true
+
+  - name: Back Market
+    careers_url: https://job-boards.greenhouse.io/backmarket
+    api: https://boards-api.eu.greenhouse.io/v1/boards/backmarket/jobs
+    notes: "Paris. Reconditionné, support et exploitation."
+    enabled: true
+
+  - name: Mirakl
+    careers_url: https://job-boards.greenhouse.io/mirakl
+    api: https://boards-api.eu.greenhouse.io/v1/boards/mirakl/jobs
+    notes: "Paris. Marketplace SaaS, IT Support & SysAdmin."
+    enabled: true
+
+  - name: ContentSquare
+    careers_url: https://job-boards.greenhouse.io/contentsquare
+    api: https://boards-api.eu.greenhouse.io/v1/boards/contentsquare/jobs
+    notes: "Paris. Expérience utilisateur, IT Ops."
+    enabled: true
+
+  - name: Cloudflare
+    careers_url: https://job-boards.greenhouse.io/cloudflare
+    api: https://boards-api.greenhouse.io/v1/boards/cloudflare/jobs
+    notes: "Réseau et Sécurité (Idéal pour ton profil pfSense/Réseaux)."
+    enabled: true
+
+  - name: Datadog
+    careers_url: https://job-boards.greenhouse.io/datadog
+    api: https://boards-api.greenhouse.io/v1/boards/datadog/jobs
+    notes: "Supervision (Wazuh/HoneyPot). Très bonne marque employeur."
+    enabled: true
+
+  - name: HashiCorp
+    careers_url: https://job-boards.greenhouse.io/hashicorp
+    api: https://boards-api.greenhouse.io/v1/boards/hashicorp/jobs
+    notes: "Infrastructure as Code, réseaux (Consul)."
+    enabled: true
+
+  - name: Samsara
+    careers_url: https://job-boards.greenhouse.io/samsara
+    api: https://boards-api.greenhouse.io/v1/boards/samsara/jobs
+    notes: "IoT et Infrastructure."
+    enabled: true
+
+  - name: Unity
+    careers_url: https://job-boards.greenhouse.io/unity
+    api: https://boards-api.eu.greenhouse.io/v1/boards/unity/jobs
+    notes: "Bureaux à Paris, IT Support."
+    enabled: true
+
+  - name: Elastic
+    careers_url: https://jobs.lever.co/elastic
+    notes: "Observabilité et sécurité."
+    enabled: true
+
+  # -- INSTITUTIONS & GRANDS GROUPES STRATÉGIQUES --
+  - name: Banque de France
+    careers_url: https://recrutement.banque-france.fr
+    scan_method: websearch
+    scan_query: 'site:recrutement.banque-france.fr "alternance" "informatique"'
+    notes: "Très gros pôle cybersécurité et infrastructure critique."
+    enabled: true
+
+  - name: Thales Group
+    careers_url: https://www.thalesgroup.com/fr/carrieres
+    scan_method: websearch
+    scan_query: 'site:thalesgroup.com "alternance" "systèmes" OR "réseaux"'
+    notes: "Le top pour la défense et la sécurité des réseaux."
+    enabled: true
+
+  - name: Airbus France
+    careers_url: https://www.airbus.com/en/careers
+    scan_method: websearch
+    scan_query: 'site:airbus.com "alternance" "IT" OR "Network" France'
+    notes: "Gestion de réseaux industriels complexes."
+    enabled: true
+
+  - name: Groupe La Poste
+    careers_url: https://www.laposterecrute.fr
+    scan_query: 'site:laposterecrute.fr "alternance" "systèmes" OR "réseaux"'
+    notes: "DSI immense, très ouverte aux profils Bac+3."
+    enabled: true
+
+  - name: Naval Group
+    careers_url: https://www.naval-group.com/fr/talents
+    scan_query: 'site:naval-group.com "alternance" "informatique" OR "réseaux"'
+    notes: "Infrastructures critiques et cybersécurité."
+    enabled: true

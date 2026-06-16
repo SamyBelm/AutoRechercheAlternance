@@ -1,0 +1,50 @@
+# Configuration du Profil AutoRechercheAlternance
+# Ce fichier contient vos informations personnelles pour la personnalisation des candidatures.
+
+candidate:
+  full_name: "[Votre Nom Complet]"
+  email: "prenom.nom@exemple.com"
+  phone: "+33 6 00 00 00 00"
+  location: "Paris, France"
+  linkedin: "linkedin.com/in/votre-profil"
+  portfolio_url: "https://votre-portfolio.com"
+  github: "github.com/votre-pseudo"
+
+target_roles:
+  primary:
+    - "Administrateur Systèmes et Réseaux"
+    - "Ingénieur Cybersécurité Junior"
+  archetypes:
+    - name: "Systèmes & Réseaux"
+      level: "Junior / Bachelor"
+      fit: "primary"
+    - name: "Consultant Cyber"
+      level: "Junior"
+      fit: "secondary"
+
+narrative:
+  headline: "Étudiant Expert Bachelor passionné par les infrastructures critiques"
+  exit_story: "Après une expérience solide en support de proximité, je me spécialise dans la sécurisation des systèmes."
+  superpowers:
+    - "Administration Réseaux (Cisco CCNA)"
+    - "Virtualisation (Proxmox, Docker)"
+    - "Cybersécurité (Wazuh, pfSense)"
+  proof_points:
+    - name: "HomeLab Sécurisé"
+      url: "https://github.com/votre-pseudo/homelab"
+      hero_metric: "Stack complète IDS/IPS et segmentation réseau"
+
+compensation:
+  target_range: "Selon grille alternance"
+  currency: "EUR"
+  minimum: "Minimum légal"
+  location_flexibility: "Hybride possible"
+
+location:
+  country: "France"
+  city: "Paris"
+  timezone: "CET"
+  visa_status: "Pas de parrainage nécessaire"
+
+cv:
+  output_format: "html"

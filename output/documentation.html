@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuel d'Exploitation AutoRechercheAlternance - Documentation Générique</title>
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/space-grotesk-latin.woff2') format('woff2');
+    font-weight: 300 700;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/dm-sans-latin.woff2') format('woff2');
+    font-weight: 100 1000;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #1a1a2e;
+    padding: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #fdfdfd;
+  }
+  .container {
+    background: white;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #2a2a4a;
+    padding-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: #2a2a4a;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-left: 5px solid #4a4a8a;
+    padding-left: 12px;
+  }
+  h3 {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #4a4a8a;
+    font-weight: 700;
+  }
+  p { margin-bottom: 12px; }
+  ul { margin-bottom: 18px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  code {
+    background: #f4f4f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 10px;
+    color: #d11141;
+  }
+  pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 18px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    font-family: 'Consolas', monospace;
+    font-size: 10.5px;
+    border-left: 4px solid #38bdf8;
+  }
+  .highlight {
+    background: #fff9c4;
+    padding: 2px 4px;
+    font-weight: bold;
+    border-radius: 2px;
+  }
+  .info-box {
+    background: #f1f5f9;
+    border-left: 4px solid #64748b;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .setup-step {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  .toc {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 35px;
+    border: 1px solid #e2e8f0;
+  }
+  .toc h3 {
+    margin-top: 0;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+  }
+  .toc ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .toc li {
+    margin-bottom: 10px;
+  }
+  .toc a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .toc a:hover {
+    text-decoration: underline;
+  }
+  .footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 10px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  
+  <h1>Manuel d'Exploitation du Système AutoRechercheAlternance - Par Sami Belmihoub </h1>
+  
+  <p>Ce guide technique définit les procédures d'installation, de configuration et d'exploitation du système <strong>AutoRechercheAlternance</strong>. Ce protocole assure une automatisation complète du cycle de candidature technique.</p>
+
+  <div class="toc">
+    <h3>Table des Matières</h3>
+    <ul>
+      <li><a href="#phase-1">1. Initialisation de l'Environnement et Sécurisation SSH</a></li>
+      <li><a href="#phase-2">2. Déploiement du Noyau Applicatif</a></li>
+      <li><a href="#phase-3">3. Standardisation du CV (Format Markdown)</a></li>
+      <li><a href="#phase-4">4. Configuration de la Veille et des Portails</a></li>
+      <li><a href="#phase-5">5. Paramétrage des Préférences Utilisateur</a></li>
+      <li><a href="#phase-6">6. Procédures d'Exploitation Quotidienne</a></li>
+    </ul>
+  </div>
+
+  <h2 id="phase-1">1. Initialisation de l'Environnement et Sécurisation SSH</h2>
+  
+  <p>L'installation s'effectue idéalement via une interface en ligne de commande (CLI) pour garantir l'intégrité du workflow.</p>
+
+  <div class="setup-step">
+    <h3>1.1 Installation de Git</h3>
+    <p>Exécuter la commande suivante pour installer le moteur de versioning :</p>
+    <pre><code># Sur Windows (via winget)
+winget install --id Git.Git -e --source winget</code></pre>
+  </div>
+
+  <div class="setup-step">
+    <h3>1.2 Sécurisation par Clé RSA</h3>
+    <p>Générer une paire de clés SSH pour authentifier les transactions avec les dépôts distants (GitHub/GitLab) :</p>
+    <pre><code># Création de la clé RSA 4096 bits
+ssh-keygen -t rsa -b 4096 -C "votre.email@exemple.com"
+
+# Extraction de la clé publique pour configuration profil
+cat ~/.ssh/id_rsa.pub</code></pre>
+    <p><em>Note : La clé publique doit être enregistrée dans les paramètres SSH de votre hébergeur de code.</em></p>
+  </div>
+
+  <div class="setup-step">
+    <h3>1.3 Installation de Node.js et de l'Agent CLI</h3>
+    <pre><code># Déploiement de l'environnement d'exécution
+# (Sur Windows via winget)
+winget install --id OpenJS.NodeJS.LTS -e --source winget
+
+# Installation globale de l'interface de pilotage (exemple pour Gemini)
+npm install -g @google/gemini-cli</code></pre>
+  </div>
+
+  <h2 id="phase-2">2. Déploiement du Noyau Applicatif</h2>
+  <p>Une fois l'environnement sécurisé, procéder au déploiement des scripts et du moteur de rendu :</p>
+  <pre><code># Clonage du répertoire
+git clone https://github.com/SamyBelm/AutoRechercheAlternance.git
+cd AutoRechercheAlternance
+
+# Initialisation des dépendances et du moteur PDF Playwright
+npm install
+npx playwright install chromium</code></pre>
+
+  <h2 id="phase-3">3. Standardisation du CV (Format Markdown)</h2>
+  <p>Le système utilise un fichier <code>cv.md</code> comme source de données canonique. Ce format permet une analyse granulaire des compétences techniques.</p>
+  
+  <div class="info-box">
+    <strong>Directives de conversion du CV :</strong>
+    <ul>
+      <li><strong>Structure :</strong> Utiliser des titres hiérarchisés (<code>#</code> pour le nom, <code>##</code> pour les sections).</li>
+      <li><strong>Typographie :</strong> Utiliser le gras (<code>**</code>) pour les technologies clés.</li>
+      <li><strong>Listes :</strong> Préférer les puces (<code>*</code>) pour les descriptifs de postes et les compétences.</li>
+      <li><strong>Emplacement :</strong> Le fichier doit impérativement être nommé <code>cv.md</code> à la racine du projet.</li>
+    </ul>
+  </div>
+
+  <h2 id="phase-4">4. Configuration de la Veille et des Portails</h2>
+  <p>Le fichier <code>portals.yml</code> centralise les sources d'opportunités. Il est paramétré pour interroger directement les APIs des principaux portails technologiques.</p>
+  
+  <div class="info-box">
+    <strong>Infrastructure de Scan :</strong>
+    <ul>
+      <li><strong>Sources :</strong> Greenhouse, Ashby, Lever (Flux directs).</li>
+      <li><strong>Filtres :</strong> Personnalisables via les sections <code>title_filter</code>.</li>
+    </ul>
+  </div>
+
+  <pre><code># Configuration des filtres de pertinence
+title_filter:
+  positive: ["Software Engineer", "Systems Administrator", "DevOps"]</code></pre>
+
+  <h2 id="phase-5">5. Paramétrage des Préférences Utilisateur</h2>
+  <p>Le système peut être personnalisé via les fichiers de configuration pour valoriser votre profil :</p>
+  <ul>
+    <li><span class="highlight">Profil (config/profile.yml) :</span> Définition des informations de contact et des rôles cibles.</li>
+    <li><span class="highlight">Modes (_profile.md) :</span> Personnalisation du ton et de la narration pour les lettres de motivation.</li>
+  </ul>
+
+  <h2 id="phase-6">6. Procédures d'Exploitation Quotidienne</h2>
+  <ul>
+    <li><strong>Analyse de Poste :</strong> Soumission de l'URL ou du descriptif dans l'interface CLI pour évaluation.</li>
+    <li><strong>Veille Automatique :</strong> Lancement périodique des commandes de scan via les filtres définis.</li>
+    <li><strong>Reporting :</strong> Suivi des indicateurs de performance dans le fichier <code>applications.md</code>.</li>
+  </ul>
+
+  <div class="footer">
+    Manuel technique AutoRechercheAlternance - Documentation - Par Belmihoub Sami .
+  </div>
+</div>
+</body>
+</html>
+
